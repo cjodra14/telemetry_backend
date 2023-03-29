@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+
+option go_package="github.com/cjodra14/telemetry-iot/telemetry_backend/api/client/grpc;grpc";
+
+service TelemetryService{
+    rpc SaveTelemetry(Telemetry)returns(TelemetryResponse);
+    rpc GetUserTelemetry(UserTelemetryRequest)returns(UserTelemetryResponse);
+}
+
+message UserTelemetryRequest{
+    string user_id = 1;
+}
+
+message UserTelemetryResponse{
+    repeated Telemetry telemetries = 1;
+}
+
+message TelemetryResponse{}
+
+message Telemetry {
+    int64 timestamp = 1;
+    string user_id = 2;
+    GPS gps = 3;
+    Accelerometer accelerometer = 4;
+}
+
+message GPS {
+    double latitude = 1;
+    double longitude = 2;
+    double speed = 3;
+    string direction = 4;
+    int64 connected_satellites = 5;
+}
+
+message Accelerometer {
+    double angle_x = 1;
+    double angle_y = 2;
+    double angle_z = 3;
+    double g_force = 4;
+}

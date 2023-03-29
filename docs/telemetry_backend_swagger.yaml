@@ -1,0 +1,99 @@
+basePath: /
+definitions:
+  models.Accelerometer:
+    properties:
+      angle_x:
+        type: number
+      angle_y:
+        type: number
+      angle_z:
+        type: number
+      g_force:
+        type: number
+    type: object
+  models.GPS:
+    properties:
+      connected_satellites:
+        type: integer
+      direction:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      speed:
+        type: number
+    type: object
+  models.Telemetry:
+    properties:
+      accelerometer:
+        $ref: '#/definitions/models.Accelerometer'
+      gps:
+        $ref: '#/definitions/models.GPS'
+      timestamp:
+        type: integer
+      user_id:
+        type: string
+    type: object
+info:
+  contact:
+    email: c.jodra14@gmail.com
+    name: Christian Jodra
+  description: Telemetry REST API of IoT telemetry device,
+  title: Telemetry IoT
+  version: "0.0"
+paths:
+  /healthz:
+    get:
+      description: This endpoint allow to see the serves status if 200 is received
+        everything is working OK
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Server status
+      tags:
+      - status
+  /save:
+    post:
+      consumes:
+      - application/json
+      description: Client Post the telmetry and it is saved on it's user on the database
+      parameters:
+      - description: Telemetry
+        in: body
+        name: telemetry
+        required: true
+        schema:
+          $ref: '#/definitions/models.Telemetry'
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: This endpoint allows the client to post the telemetry
+      tags:
+      - telemetry
+  /user/{user-id}:
+    get:
+      description: Client get the telemetry and it is saved on it's user on the database
+      parameters:
+      - description: User ID
+        in: path
+        name: user-id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      summary: This endpoint allows the client to get user telemetries
+      tags:
+      - telemetry
+swagger: "2.0"
