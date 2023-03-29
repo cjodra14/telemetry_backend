@@ -9,15 +9,15 @@ import (
 )
 
 // POSTTelemetry handler godoc
-// @Tags telemetry
-// @Summary This endpoint allows the client to post the telemetry
-// @Description Client Post the telmetry and it is saved on it's user on the database
-// @Accept  json
-// @Param telemetry body models.Telemetry true "Telemetry"
-// @Success 200
-// @Failure 400
-// @Failure 500
-// @Router /save [post]
+//	@Tags			telemetry
+//	@Summary		This endpoint allows the client to post the telemetry
+//	@Description	Client Post the telmetry and it is saved on it's user on the database
+//	@Accept			json
+//	@Param			telemetry	body	models.Telemetry	true	"Telemetry"
+//	@Success		200
+//	@Failure		400
+//	@Failure		500
+//	@Router			/save [post]
 func SaveTelemetry(telemetryService services.TelemetryService) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		telemetry := models.Telemetry{}

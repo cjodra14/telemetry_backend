@@ -35,13 +35,14 @@ definitions:
       user_id:
         type: string
     type: object
+host: localhost:8080
 info:
   contact:
     email: c.jodra14@gmail.com
     name: Christian Jodra
-  description: Telemetry REST API of IoT telemetry device,
+  description: Telemetry REST API of IoT telemetry device
   title: Telemetry IoT
-  version: "0.0"
+  version: "1.0"
 paths:
   /healthz:
     get:

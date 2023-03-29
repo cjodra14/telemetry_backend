@@ -2,14 +2,14 @@
 
 
 # Telemetry IoT
-Telemetry REST API of IoT telemetry device,
+Telemetry REST API of IoT telemetry device
   
 
 ## Informations
 
 ### Version
 
-0.0
+1.0
 
 ### Contact
 

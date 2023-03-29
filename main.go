@@ -16,12 +16,16 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// @title Telemetry IoT
-// @version 0.0
-// @description Telemetry REST API of IoT telemetry device,
-// @contact.name Christian Jodra
+
+// @title           Telemetry IoT
+// @version         1.0
+// @description     Telemetry REST API of IoT telemetry device
+
+// @contact.name   Christian Jodra
 // @contact.email c.jodra14@gmail.com
-// @BasePath /
+
+// @host      localhost:8080
+// @BasePath  /
 func main() {
 
 	conf := &configuration.Configuration{}
@@ -73,11 +77,8 @@ func main() {
 	var group run.Group
 
 	group.Add(func() error {
-		server := http.Server{
-			TelemetryRouter: http.NewTelemetryRouter(telemetryService),
-		}
 
-		return server.Init(conf.Server)
+		return http.Init(conf.Server, telemetryService)
 	}, func(e error) {
 		log.Fatal(e)
 	})

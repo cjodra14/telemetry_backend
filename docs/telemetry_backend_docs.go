@@ -160,12 +160,12 @@ const docTemplatetelemetry_backend = `{
 
 // SwaggerInfotelemetry_backend holds exported Swagger Info so clients can modify it
 var SwaggerInfotelemetry_backend = &swag.Spec{
-	Version:          "0.0",
-	Host:             "",
+	Version:          "1.0",
+	Host:             "localhost:8080",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Telemetry IoT",
-	Description:      "Telemetry REST API of IoT telemetry device,",
+	Description:      "Telemetry REST API of IoT telemetry device",
 	InfoInstanceName: "telemetry_backend",
 	SwaggerTemplate:  docTemplatetelemetry_backend,
 }
