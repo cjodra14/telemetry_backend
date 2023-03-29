@@ -25,7 +25,7 @@ RUN rm -f go.sum
 # go get uses git to pull lib dependencies
 RUN git config --global url."https://$GITHUB_USER:$GITHUB_TOKEN@github.com".insteadOf "https://github.com"
 
-RUN env GO111MODULE=on GOPRIVATE=github.com/cjodra14 go get ./...
+RUN env GO111MODULE=on GOPRIVATE=github.com/cjodra14/* go get ./...
 # RUN git describe --tags --always > VERSION
 RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 govvv build -a -installsuffix cgo -ldflags " -s -w" -o /go/bin/$PKG main.go
 

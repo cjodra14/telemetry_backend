@@ -4,9 +4,9 @@ import (
 	"context"
 	"log"
 
-	grpcAPI "github.com/cjodra14/telemetry-iot/telemetry_backend/api/client/grpc"
-	apiModels "github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/services"
+	grpcAPI "github.com/cjodra14/telemetry_backend/api/client/grpc"
+	apiModels "github.com/cjodra14/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/services"
 	grpcConfig "github.com/cjodra14/telemetry_commons/configuration/grpc"
 	commonsGrpc "github.com/cjodra14/telemetry_commons/services/grpc"
 	"github.com/pkg/errors"

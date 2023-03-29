@@ -1,4 +1,4 @@
-module github.com/cjodra14/telemetry-iot/telemetry_backend
+module github.com/cjodra14/telemetry_backend
 
 go 1.19
 

@@ -5,7 +5,7 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/api/models"
 )
 
 type MemoryTelemetryStorage struct {

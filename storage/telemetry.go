@@ -3,7 +3,7 @@ package storage
 import (
 	"context"
 
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/api/models"
 )
 
 type TelemetryStorage interface {

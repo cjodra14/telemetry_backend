@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 
-option go_package="github.com/cjodra14/telemetry-iot/telemetry_backend/api/client/grpc;grpc";
+option go_package="github.com/cjodra14/telemetry_backend/api/client/grpc;grpc";
 
 service TelemetryService{
     rpc SaveTelemetry(Telemetry)returns(TelemetryResponse);

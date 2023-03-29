@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/handlers"
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/services"
+	"github.com/cjodra14/telemetry_backend/handlers"
+	"github.com/cjodra14/telemetry_backend/services"
 	"github.com/gin-gonic/gin"
 )
 

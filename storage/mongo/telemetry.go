@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/configuration"
+	"github.com/cjodra14/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/configuration"
 	commonsMongo "github.com/cjodra14/telemetry_commons/services/mongo"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

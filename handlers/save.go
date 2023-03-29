@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/services"
+	"github.com/cjodra14/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/services"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,8 +3,8 @@ package telemetry_service
 import (
 	"context"
 
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/api/models"
-	"github.com/cjodra14/telemetry-iot/telemetry_backend/storage"
+	"github.com/cjodra14/telemetry_backend/api/models"
+	"github.com/cjodra14/telemetry_backend/storage"
 )
 
 type TelemetryService struct {
