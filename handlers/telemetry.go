@@ -5,9 +5,11 @@ import (
 
 	"github.com/cjodra14/telemetry_backend/services"
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 )
 
 // GETTelemetry handler godoc
+//
 //	@Tags			telemetry
 //	@Summary		This endpoint allows the client to get user telemetries
 //	@Description	Client get the telemetry and it is saved on it's user on the database
@@ -22,7 +24,11 @@ func GetUserTelemetries(telemetryService services.TelemetryService) gin.HandlerF
 
 		telemetries, err := telemetryService.GetuserTelemetries(c, userID)
 		if err != nil {
-			c.AbortWithError(http.StatusInternalServerError, err)
+			if err := c.AbortWithError(http.StatusInternalServerError, err); err != nil {
+				logrus.Debug(err)
+			}
+
+			return
 		}
 
 		c.JSON(http.StatusOK, telemetries)

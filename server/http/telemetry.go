@@ -11,7 +11,7 @@ import (
 )
 
 func InfoRouter(router *gin.RouterGroup) {
-	router.GET("/healthz")
+	router.GET("/healthz", handlers.GETHealthz())
 
 	router.GET("/doc/", func(c *gin.Context) { c.Redirect(http.StatusSeeOther, "/doc-api/index.html") })
 	router.GET("/doc-api/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, func(c *ginSwagger.Config) {

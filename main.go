@@ -7,6 +7,7 @@ import (
 
 	"github.com/cjodra14/telemetry_backend/configuration"
 	"github.com/cjodra14/telemetry_backend/server/http"
+	grpcServer "github.com/cjodra14/telemetry_backend/server/grpc"
 	"github.com/cjodra14/telemetry_backend/services/telemetry_service"
 	"github.com/cjodra14/telemetry_backend/storage"
 	telemetryMongo "github.com/cjodra14/telemetry_backend/storage/mongo"
@@ -83,11 +84,11 @@ func main() {
 		log.Fatal(e)
 	})
 
-	// group.Add(func() error {
-	// 	return serverGrpc.InitTelemetryServiceServer(conf.GRPCServer, telemetryService)
-	// }, func(e error) {
-	// 	log.Fatal(e)
-	// })
+	group.Add(func() error {
+		return grpcServer.InitTelemetryServiceServer(conf.GRPCServer, telemetryService)
+	}, func(e error) {
+		log.Fatal(e)
+	})
 
 	if err := group.Run(); err != nil {
 		log.Fatal(err)
